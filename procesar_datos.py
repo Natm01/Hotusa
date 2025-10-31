@@ -397,7 +397,7 @@ class ProcesadorDatos:
 
     def calcular_totales_sociedad(self, nombre_sociedad: str, nombre_normalizado: str) -> Dict[str, float]:
         """
-        Calcula los totales de debe y haber para una sociedad a partir de sus archivos CSV de sumas y saldos.
+        Calcula los totales de debe y haber para una sociedad a partir de sus archivos CSV de libro diario.
 
         Returns:
             Diccionario con 'debe' y 'haber' totales
@@ -410,46 +410,33 @@ class ProcesadorDatos:
         total_debe = 0.0
         total_haber = 0.0
 
-        # Buscar todos los archivos de sumas y saldos
-        archivos_sys = list(carpeta_sociedad.glob('**/sumas_saldos_*.csv'))
+        # Buscar todos los archivos de libro diario
+        archivos_ld = list(carpeta_sociedad.glob('**/libro_diario_*.csv'))
 
-        for archivo_csv in archivos_sys:
+        for archivo_csv in archivos_ld:
             try:
                 df = pd.read_csv(archivo_csv)
 
-                # Buscar columnas de saldos acumulados (puede ser negativo o positivo)
-                col_saldo_acumulado = None
-
-                # Buscar columnas de debe y haber (movimientos del período)
+                # Buscar columnas de debe y haber en el libro diario
                 col_debe = None
                 col_haber = None
 
                 for col in df.columns:
                     col_lower = col.lower()
-                    # Priorizar "Saldo acumulado" si existe
-                    if 'saldo acumulado' in col_lower or 'saldo final' in col_lower:
-                        col_saldo_acumulado = col
-                    # Buscar columnas de movimientos del período
-                    elif ('período' in col_lower or 'periodo' in col_lower or 'per.inf' in col_lower) and 'debe' in col_lower and col_debe is None:
+                    # Buscar columnas det_Debe o det_Haber
+                    if 'det_debe' in col_lower and col_debe is None:
                         col_debe = col
-                    elif ('período' in col_lower or 'periodo' in col_lower or 'per.inf' in col_lower) and 'haber' in col_lower and col_haber is None:
+                    elif 'det_haber' in col_lower and col_haber is None:
                         col_haber = col
 
-                # Si existe "Saldo acumulado", usarlo para calcular debe y haber
-                if col_saldo_acumulado and col_saldo_acumulado in df.columns:
-                    saldos = pd.to_numeric(df[col_saldo_acumulado], errors='coerce').fillna(0)
-                    # Saldos positivos = debe, saldos negativos = haber (en valor absoluto)
-                    total_debe += saldos[saldos > 0].sum()
-                    total_haber += abs(saldos[saldos < 0].sum())
-                else:
-                    # Si no hay saldo acumulado, usar las columnas de movimientos
-                    if col_debe and col_debe in df.columns:
-                        debe_serie = pd.to_numeric(df[col_debe], errors='coerce').fillna(0)
-                        total_debe += debe_serie.sum()
+                # Sumar los valores de debe y haber
+                if col_debe and col_debe in df.columns:
+                    debe_serie = pd.to_numeric(df[col_debe], errors='coerce').fillna(0)
+                    total_debe += debe_serie.sum()
 
-                    if col_haber and col_haber in df.columns:
-                        haber_serie = pd.to_numeric(df[col_haber], errors='coerce').fillna(0)
-                        total_haber += haber_serie.sum()
+                if col_haber and col_haber in df.columns:
+                    haber_serie = pd.to_numeric(df[col_haber], errors='coerce').fillna(0)
+                    total_haber += haber_serie.sum()
 
             except Exception as e:
                 print(f"⚠️  Error calculando totales de {archivo_csv.name}: {e}")
