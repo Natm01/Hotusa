@@ -2,7 +2,7 @@
 ESTRUCTURA DE DATOS ORIGINALES - HOTUSA
 ====================================================================================================
 
-Fecha y hora del análisis: 31/10/2025 07:27:38
+Fecha y hora del análisis: 31/10/2025 07:37:26
 Carpeta analizada: /home/user/Hotusa/datos_originales
 
 ====================================================================================================
