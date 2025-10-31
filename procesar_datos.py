@@ -10,6 +10,9 @@ import re
 from pathlib import Path
 from typing import Dict, List, Tuple, Any
 from datetime import datetime
+import pandas as pd
+import tempfile
+import os
 
 
 class ProcesadorDatos:
@@ -40,15 +43,48 @@ class ProcesadorDatos:
         nombre = re.sub(r'\s+', '_', nombre)
         return nombre
 
+    def convertir_xlsx_a_texto(self, ruta_archivo: Path) -> List[str]:
+        """
+        Convierte un archivo .xlsx o .xlsm a formato de texto delimitado por tabs.
+        Retorna lista de líneas simulando el formato de los archivos .XLS originales.
+        """
+        try:
+            # Leer el archivo Excel
+            df = pd.read_excel(ruta_archivo, sheet_name=0, header=None)
+
+            # Convertir a formato de texto delimitado por tabs
+            lineas = []
+            for _, row in df.iterrows():
+                # Convertir valores None/NaN a string vacío
+                valores = [str(val) if pd.notna(val) else '' for val in row]
+                linea = '\t'.join(valores) + '\n'
+                lineas.append(linea)
+
+            return lineas
+        except Exception as e:
+            print(f"⚠️  Error convirtiendo {ruta_archivo.name} a texto: {e}")
+            return []
+
     def leer_archivo_utf16(self, ruta_archivo: Path) -> List[str]:
-        """Lee un archivo UTF-16 LE y retorna lista de líneas."""
+        """Lee un archivo UTF-16 LE y retorna lista de líneas. Soporta .xlsx y .xlsm."""
+        extension = ruta_archivo.suffix.lower()
+
+        # Si es un archivo Excel moderno (.xlsx, .xlsm), usar pandas
+        if extension in ['.xlsx', '.xlsm']:
+            return self.convertir_xlsx_a_texto(ruta_archivo)
+
+        # Para archivos .XLS (formato antiguo de Excel exportado a texto)
         try:
             with open(ruta_archivo, 'r', encoding='utf-16-le') as f:
                 return f.readlines()
         except UnicodeDecodeError:
             # Intentar con UTF-8
-            with open(ruta_archivo, 'r', encoding='utf-8') as f:
-                return f.readlines()
+            try:
+                with open(ruta_archivo, 'r', encoding='utf-8') as f:
+                    return f.readlines()
+            except Exception as e:
+                print(f"⚠️  Error leyendo {ruta_archivo.name}: {e}")
+                return []
 
     def parsear_linea_tabs(self, texto: str) -> List[str]:
         """
@@ -350,6 +386,87 @@ class ProcesadorDatos:
                 return match.group()
         return '2025'  # Por defecto
 
+    def calcular_totales_sociedad(self, nombre_sociedad: str, nombre_normalizado: str) -> Dict[str, float]:
+        """
+        Calcula los totales de debe y haber para una sociedad a partir de sus archivos CSV de sumas y saldos.
+
+        Returns:
+            Diccionario con 'debe' y 'haber' totales
+        """
+        carpeta_sociedad = self.ruta_datos_tratados / nombre_normalizado
+
+        if not carpeta_sociedad.exists():
+            return {'debe': 0.0, 'haber': 0.0}
+
+        total_debe = 0.0
+        total_haber = 0.0
+
+        # Buscar todos los archivos de sumas y saldos
+        archivos_sys = list(carpeta_sociedad.glob('**/sumas_saldos_*.csv'))
+
+        for archivo_csv in archivos_sys:
+            try:
+                df = pd.read_csv(archivo_csv)
+
+                # Buscar columnas de debe y haber (pueden tener nombres variados)
+                col_debe = None
+                col_haber = None
+
+                for col in df.columns:
+                    col_lower = col.lower()
+                    if 'debe' in col_lower and 'saldo' in col_lower:
+                        col_debe = col
+                    elif 'haber' in col_lower and 'saldo' in col_lower:
+                        col_haber = col
+
+                # Si encontramos las columnas, sumar los valores
+                if col_debe and col_debe in df.columns:
+                    # Convertir a numérico, ignorando errores
+                    debe_serie = pd.to_numeric(df[col_debe], errors='coerce')
+                    total_debe += debe_serie.sum()
+
+                if col_haber and col_haber in df.columns:
+                    haber_serie = pd.to_numeric(df[col_haber], errors='coerce')
+                    total_haber += haber_serie.sum()
+
+            except Exception as e:
+                print(f"⚠️  Error calculando totales de {archivo_csv.name}: {e}")
+
+        return {'debe': total_debe, 'haber': total_haber}
+
+    def generar_reporte_excel(self, datos_reporte: List[Dict[str, Any]]):
+        """
+        Genera un reporte Excel con los importes finales de debe y haber por sociedad.
+
+        Args:
+            datos_reporte: Lista de diccionarios con información de cada sociedad
+        """
+        # Crear DataFrame
+        df = pd.DataFrame(datos_reporte)
+
+        # Ordenar por sociedad
+        df = df.sort_values('Sociedad')
+
+        # Formatear números
+        df['Importe Final Debe'] = df['Importe Final Debe'].apply(lambda x: f"{x:,.2f}")
+        df['Importe Final Haber'] = df['Importe Final Haber'].apply(lambda x: f"{x:,.2f}")
+
+        # Guardar en Excel
+        ruta_reporte = self.ruta_datos_tratados / 'reporte_importes_finales.xlsx'
+
+        # Usar ExcelWriter para mejor formato
+        with pd.ExcelWriter(ruta_reporte, engine='openpyxl') as writer:
+            df.to_excel(writer, sheet_name='Importes Finales', index=False)
+
+            # Ajustar ancho de columnas
+            worksheet = writer.sheets['Importes Finales']
+            worksheet.column_dimensions['A'].width = 35
+            worksheet.column_dimensions['B'].width = 25
+            worksheet.column_dimensions['C'].width = 25
+
+        print(f"\n✅ Reporte Excel generado: {ruta_reporte}")
+        return ruta_reporte
+
     def procesar_todo(self):
         """Procesa todas las sociedades."""
         print("\n" + "="*70)
@@ -357,17 +474,36 @@ class ProcesadorDatos:
         print("="*70)
 
         total_stats = {'ld': 0, 'sys': 0, 'errores': 0, 'sociedades': 0}
+        datos_reporte = []
 
         for sociedad_info in self.estructura['sociedades']:
+            nombre_sociedad = sociedad_info['sociedad']
+            nombre_normalizado = self.normalizar_nombre_sociedad(nombre_sociedad)
+
             try:
                 stats = self.procesar_sociedad(sociedad_info)
                 total_stats['ld'] += stats['ld']
                 total_stats['sys'] += stats['sys']
                 total_stats['errores'] += stats['errores']
                 total_stats['sociedades'] += 1
+
+                # Calcular totales de debe y haber para el reporte
+                totales = self.calcular_totales_sociedad(nombre_sociedad, nombre_normalizado)
+                datos_reporte.append({
+                    'Sociedad': nombre_sociedad,
+                    'Importe Final Debe': totales['debe'],
+                    'Importe Final Haber': totales['haber']
+                })
+
             except Exception as e:
                 print(f"❌ Error procesando {sociedad_info['sociedad']}: {e}")
                 total_stats['errores'] += 1
+                # Agregar al reporte con valores en 0
+                datos_reporte.append({
+                    'Sociedad': nombre_sociedad,
+                    'Importe Final Debe': 0.0,
+                    'Importe Final Haber': 0.0
+                })
 
         print("\n" + "="*70)
         print("📈 RESUMEN FINAL")
@@ -377,6 +513,12 @@ class ProcesadorDatos:
         print(f"Sumas y saldos generados: {total_stats['sys']}")
         print(f"Errores: {total_stats['errores']}")
         print("="*70)
+
+        # Generar reporte Excel
+        print("\n" + "="*70)
+        print("📊 GENERANDO REPORTE DE IMPORTES FINALES")
+        print("="*70)
+        self.generar_reporte_excel(datos_reporte)
 
 
 def main():
