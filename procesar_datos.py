@@ -55,8 +55,17 @@ class ProcesadorDatos:
             # Convertir a formato de texto delimitado por tabs
             lineas = []
             for _, row in df.iterrows():
-                # Convertir valores None/NaN a string vacío
-                valores = [str(val) if pd.notna(val) else '' for val in row]
+                valores = []
+                for val in row:
+                    if pd.isna(val):
+                        valores.append('')
+                    elif isinstance(val, (int, float)):
+                        # Convertir números al formato europeo (coma como decimal)
+                        # Esto mantiene compatibilidad con la lógica de limpieza existente
+                        valores.append(str(val).replace('.', ','))
+                    else:
+                        valores.append(str(val))
+
                 linea = '\t'.join(valores) + '\n'
                 lineas.append(linea)
 
@@ -408,28 +417,39 @@ class ProcesadorDatos:
             try:
                 df = pd.read_csv(archivo_csv)
 
-                # Buscar columnas de debe y haber (pueden tener nombres variados)
+                # Buscar columnas de saldos acumulados (puede ser negativo o positivo)
+                col_saldo_acumulado = None
+
+                # Buscar columnas de debe y haber (movimientos del período)
                 col_debe = None
                 col_haber = None
 
                 for col in df.columns:
                     col_lower = col.lower()
-                    # Buscar columna de debe - puede ser "Período de informe debe", "Saldo Debe", etc.
-                    if 'debe' in col_lower and col_debe is None:
+                    # Priorizar "Saldo acumulado" si existe
+                    if 'saldo acumulado' in col_lower or 'saldo final' in col_lower:
+                        col_saldo_acumulado = col
+                    # Buscar columnas de movimientos del período
+                    elif ('período' in col_lower or 'periodo' in col_lower or 'per.inf' in col_lower) and 'debe' in col_lower and col_debe is None:
                         col_debe = col
-                    # Buscar columna de haber
-                    elif 'haber' in col_lower and col_haber is None:
+                    elif ('período' in col_lower or 'periodo' in col_lower or 'per.inf' in col_lower) and 'haber' in col_lower and col_haber is None:
                         col_haber = col
 
-                # Si encontramos las columnas, sumar los valores
-                if col_debe and col_debe in df.columns:
-                    # Convertir a numérico, ignorando errores
-                    debe_serie = pd.to_numeric(df[col_debe], errors='coerce')
-                    total_debe += debe_serie.sum()
+                # Si existe "Saldo acumulado", usarlo para calcular debe y haber
+                if col_saldo_acumulado and col_saldo_acumulado in df.columns:
+                    saldos = pd.to_numeric(df[col_saldo_acumulado], errors='coerce').fillna(0)
+                    # Saldos positivos = debe, saldos negativos = haber (en valor absoluto)
+                    total_debe += saldos[saldos > 0].sum()
+                    total_haber += abs(saldos[saldos < 0].sum())
+                else:
+                    # Si no hay saldo acumulado, usar las columnas de movimientos
+                    if col_debe and col_debe in df.columns:
+                        debe_serie = pd.to_numeric(df[col_debe], errors='coerce').fillna(0)
+                        total_debe += debe_serie.sum()
 
-                if col_haber and col_haber in df.columns:
-                    haber_serie = pd.to_numeric(df[col_haber], errors='coerce')
-                    total_haber += haber_serie.sum()
+                    if col_haber and col_haber in df.columns:
+                        haber_serie = pd.to_numeric(df[col_haber], errors='coerce').fillna(0)
+                        total_haber += haber_serie.sum()
 
             except Exception as e:
                 print(f"⚠️  Error calculando totales de {archivo_csv.name}: {e}")
