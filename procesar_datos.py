@@ -302,8 +302,8 @@ class ProcesadorDatos:
 
         columnas = sorted(columnas)
 
-        # Guardar CSV
-        with open(ruta_salida, 'w', newline='', encoding='utf-8') as f:
+        # Guardar CSV con UTF-8-sig para compatibilidad con Excel
+        with open(ruta_salida, 'w', newline='', encoding='utf-8-sig') as f:
             writer = csv.DictWriter(f, fieldnames=columnas)
             writer.writeheader()
             writer.writerows(registros_renombrados)
