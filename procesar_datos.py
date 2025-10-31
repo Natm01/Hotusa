@@ -382,9 +382,9 @@ class ProcesadorDatos:
 def main():
     """Función principal."""
     procesador = ProcesadorDatos(
-        ruta_estructura_json='/home/user/Hotusa/estructura_json.json',
-        ruta_datos_originales='/home/user/Hotusa/datos_originales',
-        ruta_datos_tratados='/home/user/Hotusa/datos_tratados'
+        ruta_estructura_json='estructura_json.json',
+        ruta_datos_originales='datos_originales',
+        ruta_datos_tratados='datos_tratados'
     )
 
     procesador.procesar_todo()

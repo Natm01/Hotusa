@@ -127,6 +127,7 @@ yarn-error.log*
 build/
 
 # Librorías Hotusa (excluir si es necesario)
+datos_tratados/
 Acteon Siglo XXI/
 Bemus Hotels/
 Braide/

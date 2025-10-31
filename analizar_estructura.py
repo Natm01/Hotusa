@@ -195,8 +195,8 @@ def parsear_estructura(ruta_archivo: str) -> Dict[str, Any]:
 
 def main():
     """Función principal."""
-    ruta_estructura = '/home/user/Hotusa/estructura_datos.txt'
-    ruta_salida = '/home/user/Hotusa/estructura_json.json'
+    ruta_estructura = 'estructura_datos.txt'
+    ruta_salida = 'estructura_json.json'
 
     print("🔍 Analizando estructura de archivos...")
     resultado = parsear_estructura(ruta_estructura)
