@@ -295,6 +295,18 @@ class ProcesadorDatos:
                 registro_nuevo[nueva_clave] = valor
             registros_renombrados.append(registro_nuevo)
 
+        # Agregar columna GT_CUENTA
+        # Prioridad: Lib.mayor > Cta.mayor > Cuenta
+        for registro in registros_renombrados:
+            if 'Lib.mayor' in registro and registro['Lib.mayor']:
+                registro['GT_CUENTA'] = registro['Lib.mayor']
+            elif 'Cta.mayor' in registro and registro['Cta.mayor']:
+                registro['GT_CUENTA'] = registro['Cta.mayor']
+            elif 'Cuenta' in registro and registro['Cuenta']:
+                registro['GT_CUENTA'] = registro['Cuenta']
+            else:
+                registro['GT_CUENTA'] = ''
+
         # Obtener todas las columnas
         columnas = set()
         for registro in registros_renombrados:
