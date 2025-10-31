@@ -1,0 +1,256 @@
+Arrastre de saldos,Cta.mayor,Div.,Mon.,Período de informe debe,Saldo Haber per.inf.,Saldo acumulado,Saldo per.anteriores,Soc.,Texto explicativo
+-3050.00,10000000,,EUR,0.00,0.00,-3050.00,0.00,EL00,Capital social
+-1575.63,11200000,,EUR,0.00,0.00,-1575.63,0.00,EL00,Reserva legal
+-962492.51,11300000,,EUR,0.00,1617837.52,-2580330.03,0.00,EL00,Reservas voluntarias
+-1100000.00,11800000,,EUR,0.00,0.00,-1100000.00,0.00,EL00,Aportaciones de socios o propietarios
+-1617837.52,12900000,,EUR,1617837.52,0.00,0.00,0.00,EL00,Resultado del ejercicio
+-734916.42,14300000,,EUR,734916.42,0.00,0.00,0.00,EL00,Provisiones a largo plazo
+1800.00,20600000,,EUR,0.00,0.00,1800.00,0.00,EL00,Aplicaciones informáticas
+1509.88,21200000,,EUR,0.00,0.00,1509.88,0.00,EL00,Instalaciones técnicas
+2320.70,21300000,,EUR,0.00,0.00,2320.70,0.00,EL00,Maquinaria
+351907.80,21500000,,EUR,0.00,0.00,351907.80,0.00,EL00,Otras instalaciones
+300612.38,21600000,,EUR,0.00,0.00,300612.38,0.00,EL00,Mobiliario
+55217.31,21900000,,EUR,0.00,0.00,55217.31,0.00,EL00,Otro inmovilizado material
+5390618.82,24231000,,EUR,464539.38,2970166.83,2884991.37,0.00,EL00,Créditos a largo plazo a empresas del grupo
+123506.93,24231100,,EUR,85674.17,123506.93,85674.17,0.00,EL00,Créditos a LP a empresas del grupo (Intereses)
+263766.66,26000000,,EUR,254666.68,0.00,518433.34,0.00,EL00,Fianzas constituidas a largo plazo
+-1800.00,28060000,,EUR,0.00,0.00,-1800.00,0.00,EL00,Amortización acumulada aplicaciones informáticas
+-1509.88,28120000,,EUR,0.00,0.00,-1509.88,0.00,EL00,Amortización acumulada de instalaciones técnicas
+-2023.09,28130000,,EUR,0.00,260.41,-2283.50,0.00,EL00,Amortización acumulada de maquinaria
+-351907.80,28150000,,EUR,0.00,0.00,-351907.80,0.00,EL00,Amortización acumulada de otras instalaciones
+-269359.38,28160000,,EUR,0.00,18465.33,-287824.71,0.00,EL00,Amortización acumulada de mobiliario
+-55217.31,28190000,,EUR,0.00,0.00,-55217.31,0.00,EL00,Amortiz. acumulada de otro inmovilizado material
+7396.87,30000010,,EUR,0.00,7396.87,0.00,0.00,EL00,Alimentacion
+3024.41,30000020,,EUR,0.00,3024.41,0.00,0.00,EL00,Bebidas
+693.26,30000030,,EUR,0.00,693.26,0.00,0.00,EL00,Limpieza
+3122.33,30000040,,EUR,0.00,3122.33,0.00,0.00,EL00,Amenities
+-124011.01,40000000,,EUR,396949.82,306049.70,-33110.89,0.00,EL00,Proveedores
+-30801.43,40090024,,EUR,44770.81,32127.38,-18158.00,0.00,EL00,"Proveedores, fras. Pdtes. Recibir Alimentación MM"
+-6062.17,40090025,,EUR,9058.01,7411.05,-4415.21,0.00,EL00,"Proveedores, fras. Pdtes. Recibir Bodega MM"
+-3618.68,40090026,,EUR,9204.58,9204.58,-3618.68,0.00,EL00,"Proveedores, fras. Pdtes. Recibir Amenities MM"
+-12084.30,40090027,,EUR,14589.10,7957.33,-5452.53,0.00,EL00,"Proveedores, fras. Pdtes. Limpieza MM"
+-3140.95,40090028,,EUR,3140.95,1502.05,-1502.05,0.00,EL00,"Proveedores, fras. Pdtes. Recibir - Menaje"
+-1197.78,40090030,,EUR,1819.38,828.52,-206.92,0.00,EL00,"Proveedores, fras. Pdtes. Recibir - Papelería"
+-1711.91,40090031,,EUR,1962.97,1660.70,-1409.64,0.00,EL00,"Proveedores, fras. Pdtes. Recibir Consumibles man"
+-584420.72,40300000,,EUR,951044.34,364894.20,1729.42,0.00,EL00,"Prov, empresas del grupo"
+0.00,40390000,,EUR,4873.26,4873.26,0.00,0.00,EL00,FPR Comisiones IGM (Agincourt)
+-6634.46,40392000,,EUR,6634.46,347.94,-347.94,0.00,EL00,"Prov , emp gpo fact pend rec (HTU)"
+0.00,40392006,,EUR,0.00,1038.06,-1038.06,0.00,EL00,"Prov , emp gpo fact pend rec (HTU) SAP"
+0.00,40395028,,EUR,887.40,887.40,0.00,0.00,EL00,"Prov , emp gpo fact pend rec (CITADEL) SERVICIOS A"
+0.00,40396026,,EUR,175.24,175.24,0.00,0.00,EL00,"Prov , emp gpo fact pend rec (AGINCOURT) COMISIONE"
+-89884.90,40396027,,EUR,89884.90,0.00,0.00,0.00,EL00,"Prov , emp gpo fact pend rec (AGINCOURT) MANAGEMEN"
+-3431.55,40397000,,EUR,4221.12,789.57,0.00,0.00,EL00,"Prov , emp gpo fact pend rec (HOTUSA HOTELS)"
+-6768.24,40397026,,EUR,7501.61,733.37,0.00,0.00,EL00,"Prov , emp gpo fact pend rec (HOTUSA HOTELS) COMIS"
+0.00,40397027,,EUR,96.40,96.40,0.00,0.00,EL00,"Prov , emp gpo fact pend rec (HOTUSA HOTELS) COMIS"
+-68649.18,40397998,,EUR,68649.18,761.32,-761.32,0.00,EL00,"Prov , emp gpo fact pend rec (HOTUSA HOTELS) MK/ O"
+0.00,40398000,,EUR,747.10,747.10,0.00,0.00,EL00,"Prov , emp gpo fact pend rec (KEYTEL)"
+-4946.18,40399999,,EUR,5853.05,906.87,0.00,0.00,EL00,"Prov , emp gpo fact pend rec"
+-78121.18,41000000,,EUR,2014100.96,1951755.31,-15775.53,0.00,EL00,Acreedores por prestaciones de servicios
+-48242.32,41090001,,EUR,54663.74,6421.42,0.00,0.00,EL00,"Acreed prest serv, f. pend rec (Suministros)"
+-269.60,41090002,,EUR,281.60,2499.51,-2487.51,0.00,EL00,"Acreed prest serv, f. pend rec (Serv. Profesi)"
+-61243.52,41090004,,EUR,61243.52,0.00,0.00,0.00,EL00,"Acreed prest serv, f. pend rec ( Lavanderia)"
+-21765.57,41090005,,EUR,34590.06,12864.46,-39.97,0.00,EL00,"Acreed prest serv, f. pend rec (Cuotas Asoc.)"
+-47856.83,41090006,,EUR,65113.85,17257.02,0.00,0.00,EL00,"Acreed prest serv, f. pend rec (ETT)"
+-3083.63,41090008,,EUR,21100.84,19689.27,-1672.06,0.00,EL00,"Acreed prest serv, f.p.r. (Mantenim sg contrato)"
+-74217.03,41090009,,EUR,89107.82,15129.13,-238.34,0.00,EL00,"Acreed prest serv, f. pend rec (Comisiones)"
+0.00,41090016,,EUR,24378.44,24378.44,0.00,0.00,EL00,"Acreed prest serv, f. pend rec(Repar. Mant. Edif)"
+0.00,41090018,,EUR,516.43,756.79,-240.36,0.00,EL00,"Acreed prest serv, f. pend rec(Central Telefónica)"
+-673.70,41090019,,EUR,673.70,125.68,-125.68,0.00,EL00,"Acreed prest serv, f. pend rec(Reposiciones)"
+0.00,41090032,,EUR,0.00,583.14,-583.14,0.00,EL00,"Acreed prest serv, f. pend rec(S.G.A.E)"
+-474836.16,41090033,,EUR,666180.26,409620.67,-218276.57,0.00,EL00,"Acreed prest serv, f. pend rec(Otros Impuestos)"
+-204693.60,41090036,,EUR,209468.60,4775.00,0.00,0.00,EL00,"Acreed prest serv, f. pend rec(Arrendamiento)"
+-9748.05,41090038,,EUR,7357.35,171.60,-2562.30,0.00,EL00,"Acreedores, fras pend recibir (Suministro Agua)"
+-30892.52,41090039,,EUR,26099.06,1328.79,-6122.25,0.00,EL00,"Acreedores, fras. pend recibir (Suministro Gas)"
+0.00,41090041,,EUR,496.80,496.80,0.00,0.00,EL00,"Acreed, fras. pend recibir (Suministro Telefono)"
+-8385.73,41090042,,EUR,1036.81,0.00,-7348.92,0.00,EL00,"Proveedores, fras. Pdtes. Rec. Rappels"
+0.00,41090049,,EUR,0.00,961.66,-961.66,0.00,EL00,"Acreed prest serv, f. pend rec (Correctivos)"
+-345.00,41091001,,EUR,2560.33,2391.61,-176.28,0.00,EL00,"Acreed prest serv, Alquiler Varios"
+-10982.60,41099999,,EUR,12872.60,1890.00,0.00,0.00,EL00,"Acreed prest serv, f. pend rec o de formalizar"
+-2807.20,41100000,,EUR,7381.00,4573.80,0.00,0.00,EL00,"Acreedores, efectos comerciales a pagar"
+-90.25,41300000,,EUR,2121.36,2031.11,0.00,0.00,EL00,"Acreedores, empresas del grupo"
+0.00,41309999,,EUR,0.00,74671.86,-74671.86,0.00,EL00,"Acreedores, emps gpo fras pendientes de recibir"
+-5049.55,41400000,,EUR,5049.55,0.00,0.00,0.00,EL00,"Acreedores, empresas asociadas"
+242356.99,43000000,,EUR,118299.60,363696.93,-3040.34,0.00,EL00,Clientes
+-30183.52,43090005,,EUR,293447.62,263264.95,-0.85,0.00,EL00,Mano corriente TMS
+0.00,43099999,,EUR,91473.74,91473.74,0.00,0.00,EL00,"Clientes, facturas pendientes de formalizar"
+-440.00,43100005,,EUR,1273.00,833.00,0.00,0.00,EL00,"Clientes, efec comerc a cobrar (Transferencia)"
+9492.94,43100006,,EUR,387.88,2710.46,7170.36,0.00,EL00,"Clientes, efec comerc a cobrar (PAYTEF)"
+-73235.85,43100009,,EUR,71060.96,3278.50,-5453.39,0.00,EL00,"Clientes, cobros no asignados"
+59860.57,43100010,,EUR,22448.56,84023.61,-1714.48,0.00,EL00,"Clientes, efectos comerciales a cobrar (ECOMMERS)"
+486.06,43100019,,EUR,0.00,0.00,486.06,0.00,EL00,"Clientes, efec comerc a cobrar (VOUCHER)"
+1657.00,43100020,,EUR,0.00,0.00,1657.00,0.00,EL00,"Clientes, efec comerc a cobrar (CHEQUE)"
+1462.00,43100022,,EUR,21986.02,22930.22,517.80,0.00,EL00,"Clientes, efec comerc a cobrar (PAYTEFIN)"
+595.68,43120000,,EUR,0.00,0.00,595.68,0.00,EL00,"Clientes, efectos comerciales por efectos desconta"
+106568.08,43300000,,EUR,177462.44,279429.66,4600.86,0.00,EL00,"Clientes, empresas del grupo"
+1428.20,43300002,,EUR,0.00,0.00,1428.20,0.00,EL00,Club Loyalty - Forma de cobro
+33940.46,43600000,,EUR,0.00,18595.00,15345.46,0.00,EL00,Clientes de dudoso cobro
+-6540.74,43800000,,EUR,1531.93,192.73,-5201.54,0.00,EL00,Anticipos de clientes
+-155.70,43800006,,EUR,0.00,0.00,-155.70,0.00,EL00,Anticipos Bono pendiente uso
+0.00,46500000,,EUR,121447.64,121447.64,0.00,0.00,EL00,Remuneraciones pendientes de pago
+-8337.33,46500002,,EUR,9520.29,1182.96,0.00,0.00,EL00,Prorrata de paga extra
+-707.00,47000000,,EUR,42004.08,18079.26,23217.82,0.00,EL00,HP IVA deudora Periodo Corriente
+65990.48,47010000,,EUR,389592.86,446252.38,9330.96,0.00,EL00,HP IVA deudora Devolución Solicitada.
+114.75,47100000,,EUR,0.00,90.00,24.75,0.00,EL00,Organismos Seguridad Social deudora
+0.00,47200000,,EUR,446381.28,446381.28,0.00,0.00,EL00,"Hacienda publica, IVA soportado"
+0.00,47510001,,EUR,154.77,154.77,0.00,0.00,EL00,"Hacienda publica acreedora, Retenciones IRPF"
+-8298.30,47510003,,EUR,10772.85,2474.55,0.00,0.00,EL00,"Hacienda publica acreedora, Retenciones Personal"
+-16874.89,47600000,,EUR,22498.41,5533.52,90.00,0.00,EL00,Seguridad Social acreedora
+0.00,47700000,,EUR,17923.46,17923.46,0.00,0.00,EL00,"Hacienda publica, IVA Repercutido"
+823.60,48020004,,EUR,0.00,823.60,0.00,0.00,EL00,Gastos anticipados (Cuotas Asoc.)
+779.15,48020007,,EUR,1670.20,1972.18,477.17,0.00,EL00,Gastos anticipados (Mantenimiento según contrato)
+0.00,48020009,,EUR,401.00,300.78,100.22,0.00,EL00,Gastos anticipados (Comercial/MKT/Publicidad)
+1084.47,48040001,,EUR,0.00,976.05,108.42,0.00,EL00,Gastos anticipados (Seguro Contenido)
+18823.27,48040004,,EUR,0.00,16940.97,1882.30,0.00,EL00,Gastos anticipados (Seguro Resp. Civil)
+240.00,48090001,,EUR,3225.41,565.53,2899.88,0.00,EL00,Gastos anticipados (Aplic.Inform.)
+-33940.46,49000000,,EUR,18595.00,0.00,-15345.46,0.00,EL00,Deter. de valor créd. por operaciones comerciales
+2639.82,55100000,,EUR,130504.60,133144.42,0.00,0.00,EL00,Cuenta corriente con socios y administradores
+0.00,55230000,,EUR,3841485.80,3841485.80,0.00,0.00,EL00,Traspaso A Cta 1806
+0.00,55230001,,EUR,3311206.30,3311206.30,0.00,0.00,EL00,Cash Pooling (Automatico)
+254666.68,56500000,,EUR,0.00,254666.68,0.00,0.00,EL00,Fianzas constituidas a corto plazo
+1635.28,57000000,,EUR,610.50,2245.78,0.00,0.00,EL00,"Caja, euros"
+28.00,57000005,,EUR,8.00,36.00,0.00,0.00,EL00,"POS, Caja"
+200.00,57000006,,EUR,0.00,200.00,0.00,0.00,EL00,Fondo fijo caja restaurante
+700.00,57000010,,EUR,0.00,700.00,0.00,0.00,EL00,Fondo recepcion
+0.00,57207060,,EUR,356061.69,356061.69,0.00,0.00,EL00,POPULAR 0604909729 - SALDO
+0.00,57207061,,EUR,296574.31,296574.31,0.00,0.00,EL00,POPULAR 0604909729 - COBROS
+0.00,57207062,,EUR,59487.38,59417.30,70.08,0.00,EL00,POPULAR 0604909729 - PAGO
+0.00,57207350,,EUR,2614611.55,2614611.55,0.00,0.00,EL00,SABADELL 0001436054 - SALDO
+0.00,57207351,,EUR,57805.29,57805.29,0.00,0.00,EL00,SABADELL 0001436054 - COBROS
+0.00,57207352,,EUR,2557816.24,2557302.27,513.97,0.00,EL00,SABADELL 0001436054 - PAGOS
+0.00,57210400,,EUR,1383787.58,1383787.58,0.00,0.00,EL00,SANTANDER 2112105378 - SALDO
+0.00,57210401,,EUR,501826.72,502186.72,-360.00,0.00,EL00,SANTANDER 2112105378 - COBROS
+0.00,57210402,,EUR,881600.86,881600.86,0.00,0.00,EL00,SANTANDER 2112105378 - PAGOS
+0.00,57219850,,EUR,21911.43,21911.43,0.00,0.00,EL00,BBVA0201585819 - SALDO
+0.00,57219851,,EUR,18564.08,18564.08,0.00,0.00,EL00,BBVA0201585819 - COBROS
+0.00,57219852,,EUR,3347.35,3347.35,0.00,0.00,EL00,BBVA0201585819 - PAGOS
+0.00,60020001,,EUR,32362.77,30504.71,1858.06,0.00,EL00,Compras MP Comida
+0.00,60020002,,EUR,7449.01,6928.50,520.51,0.00,EL00,Compras MP Bodega
+0.00,60020003,,EUR,9204.58,7607.96,1596.62,0.00,EL00,Compras MP Amenities
+0.00,60020004,,EUR,7957.33,7971.46,-14.13,0.00,EL00,Compras MP Limpieza
+0.00,60020005,,EUR,1502.05,1534.54,-32.49,0.00,EL00,Compras Menaje
+0.00,60040001,,EUR,828.52,206.92,621.60,0.00,EL00,Compras Papelería
+0.00,60040002,,EUR,1660.70,1660.70,0.00,0.00,EL00,Compras Consumibles
+0.00,60040099,,EUR,90.00,8.50,81.50,0.00,EL00,Compras Otros
+0.00,60710001,,EUR,81466.54,81452.54,14.00,0.00,EL00,Servicios externos - limpieza
+0.00,60710002,,EUR,62084.14,62449.77,-365.63,0.00,EL00,Servicios externos - Lavanderia
+0.00,60710004,,EUR,25524.26,10788.54,14735.72,0.00,EL00,Servicios externos - Vigilancia
+0.00,60720001,,EUR,17795.83,17795.83,0.00,0.00,EL00,Servicios externos - Camareros
+0.00,60720002,,EUR,1096.04,548.02,548.02,0.00,EL00,Servicios externos - Cocineros
+0.00,61020001,,EUR,7396.87,0.00,7396.87,0.00,EL00,Variación Existencias Alimentación
+0.00,61020002,,EUR,3024.41,0.00,3024.41,0.00,EL00,Variación Existencias Bodega
+0.00,61020003,,EUR,3122.33,0.00,3122.33,0.00,EL00,Variación Existencias Amenities
+0.00,61020004,,EUR,693.26,0.00,693.26,0.00,EL00,Variación Existencias Limpieza
+0.00,62100002,,EUR,245403.51,205514.14,39889.37,0.00,EL00,Alquileres - Mobiliario
+0.00,62100004,,EUR,4914.20,4775.00,139.20,0.00,EL00,Alquileres - Maquinaria
+0.00,62100200,,EUR,204693.61,204693.60,0.01,0.00,EL00,Arrendamientos y cánones (terceros variable)
+0.00,62200001,,EUR,22454.60,16709.00,5745.60,0.00,EL00,Mantenimiento - Construcciones
+0.00,62200002,,EUR,93566.15,42551.76,51014.39,0.00,EL00,Mantenimiento - Instalaciones
+0.00,62200003,,EUR,495.00,0.00,495.00,0.00,EL00,Mantenimiento - Maquinaria
+0.00,62200004,,EUR,393.48,150.05,243.43,0.00,EL00,Mantenimiento - Utillaje
+0.00,62200005,,EUR,19206.95,18898.80,308.15,0.00,EL00,Mantenimiento - Mobiliario
+0.00,62200006,,EUR,1951.50,0.00,1951.50,0.00,EL00,Mantenimiento - Equipos Informáticos
+0.00,62200009,,EUR,1021.08,1021.08,0.00,0.00,EL00,Mantenimiento - Sistemas contra incendio
+0.00,62200011,,EUR,413.00,413.00,0.00,0.00,EL00,Mantenimiento - Aire acond /c
+0.00,62200012,,EUR,3538.61,2118.18,1420.43,0.00,EL00,Mantenimiento - Eléctrico
+0.00,62200017,,EUR,398.22,0.00,398.22,0.00,EL00,Mantenimiento - Habitaciones
+0.00,62210002,,EUR,592.51,592.51,0.00,0.00,EL00,Mnto. CUOTAS - Instalaciones
+0.00,62210004,,EUR,4775.00,4775.00,0.00,0.00,EL00,Mnto. CUOTAS - Utillaje
+0.00,62210005,,EUR,240.00,0.00,240.00,0.00,EL00,Mnto. CUOTAS - Mobiliario
+0.00,62210009,,EUR,612.44,612.44,0.00,0.00,EL00,Mnto. CUOTAS - Sistemas contra incendio
+0.00,62210010,,EUR,402.92,0.00,402.92,0.00,EL00,Mnto. CUOTAS - Ascensores
+0.00,62210012,,EUR,302.12,302.12,0.00,0.00,EL00,Mnto. CUOTAS - Eléctrico
+0.00,62210013,,EUR,350.04,0.08,349.96,0.00,EL00,Mnto. CUOTAS - Exterminacion
+0.00,62210016,,EUR,429.15,0.00,429.15,0.00,EL00,Mnto. CUOTAS - Tratamiento legionella
+0.00,62210025,,EUR,256.08,0.00,256.08,0.00,EL00,Mnto. CUOTAS - Seguridad
+0.00,62210026,,EUR,13459.03,6287.04,7171.99,0.00,EL00,Mnto. CUOTAS - Sistemas Informáticos
+0.00,62210999,,EUR,54.13,291.73,-237.60,0.00,EL00,Mnto. CUOTAS - Otros
+0.00,62220000,,EUR,735053.52,734916.42,137.10,0.00,EL00,Mantenimiento - Inversión
+0.00,62300001,,EUR,1706.60,0.00,1706.60,0.00,EL00,Serv profesionales - Legal
+0.00,62300008,,EUR,179.65,0.00,179.65,0.00,EL00,Serv profesionales - Registros
+0.00,62300012,,EUR,13640.33,10324.41,3315.92,0.00,EL00,Serv profesionales - Auditoria
+0.00,62300014,,EUR,301.95,345.10,-43.15,0.00,EL00,Serv profesionales - Protección de datos
+0.00,62500001,,EUR,6416.37,0.00,6416.37,0.00,EL00,Seguros - Edificio Resp. Civil y/o Daños Materiale
+0.00,62500005,,EUR,9186.66,0.00,9186.66,0.00,EL00,Seguros Continente
+0.00,62500007,,EUR,976.05,0.00,976.05,0.00,EL00,Seguros - Contenido y PB
+0.00,62500008,,EUR,575.91,0.00,575.91,0.00,EL00,Seguros - Terrorismo
+0.00,62500009,,EUR,390.24,0.00,390.24,0.00,EL00,Seguros - Asistencia clientes
+0.00,62600001,,EUR,469.86,1.48,468.38,0.00,EL00,Servicios bancarios - Transacciones
+0.00,62600002,,EUR,1379.02,103.50,1275.52,0.00,EL00,Servicios Bancarios - Visa
+0.00,62600003,,EUR,26.85,0.00,26.85,0.00,EL00,Servicios Bancarios - Amexco
+0.00,62600019,,EUR,412.24,0.00,412.24,0.00,EL00,Servicios Bancarios - Sipay
+0.00,62700011,,EUR,2542.08,780.52,1761.56,0.00,EL00,Publicidad Fija - Consorcios y Fees
+0.00,62700012,,EUR,1928.62,401.00,1527.62,0.00,EL00,Publicidad Fija - Web
+0.00,62700028,,EUR,6619.67,5807.48,812.19,0.00,EL00,Publicidad -  Marca (Royalty fee)
+0.00,62800001,,EUR,59468.03,62677.47,-3209.44,0.00,EL00,Suministros - Electricidad
+0.00,62800002,,EUR,37563.37,39638.33,-2074.96,0.00,EL00,Suministros - Gas
+0.00,62800003,,EUR,8395.49,8276.73,118.76,0.00,EL00,Suministros - Agua
+0.00,62800005,,EUR,3884.07,4420.03,-535.96,0.00,EL00,Suministros - Teléfono
+0.00,62800006,,EUR,861.66,0.00,861.66,0.00,EL00,Suministros - Internet ADSL
+0.00,62800007,,EUR,173.64,0.00,173.64,0.00,EL00,Suministros - Teléfono Móvil
+0.00,62900001,,EUR,315.94,231.82,84.12,0.00,EL00,Otros serv - Huespedes
+0.00,62900004,,EUR,419.68,0.00,419.68,0.00,EL00,Otros serv - Portes
+0.00,62900011,,EUR,97.50,97.50,0.00,0.00,EL00,Otros serv - Musica ambiental
+0.00,62900012,,EUR,583.14,0.00,583.14,0.00,EL00,Otros serv - Tasas musicales
+0.00,62900017,,EUR,150797.37,63140.97,87656.40,0.00,EL00,Otros serv - Overbookings
+0.00,62900022,,EUR,449.51,0.00,449.51,0.00,EL00,Otros serv - Fotocopias
+0.00,62900026,,EUR,69897.76,56375.12,13522.64,0.00,EL00,Otros serv - Comisiones de agencias
+0.00,62900028,,EUR,10687.49,5822.70,4864.79,0.00,EL00,Otros serv - Refacturaciones Empresas del Grupo
+0.00,62900029,,EUR,3126.36,30.35,3096.01,0.00,EL00,Otros serv - Refacturaciones Empresas del Grupo Ca
+0.00,62900030,,EUR,4226.01,0.00,4226.01,0.00,EL00,Otros serv - Refacturaciones Empresas del Grupo Co
+0.00,62900031,,EUR,12323.76,1602.78,10720.98,0.00,EL00,Otros serv - Selección Personal
+0.00,62900037,,EUR,17461.98,16270.36,1191.62,0.00,EL00,Otros serv - Management (Base Fee)
+0.00,62900038,,EUR,74441.52,74441.52,0.00,0.00,EL00,Otros serv - Management (Incentive Fee)
+0.00,63110000,,EUR,823573.33,641771.35,181801.98,0.00,EL00,Impuesto Bienes Inmuebles (IBI)
+0.00,63120000,,EUR,33946.29,0.00,33946.29,0.00,EL00,Impuesto Actividades Económicas (IAE)
+0.00,63150000,,EUR,47638.48,36754.47,10884.01,0.00,EL00,Tasa de basuras
+0.00,64000001,,EUR,8136.89,0.00,8136.89,0.00,EL00,Sueldos y Salarios
+0.00,64000002,,EUR,3115.17,0.00,3115.17,0.00,EL00,Sueldos y Salarios Camareros
+0.00,64000003,,EUR,2264.83,0.00,2264.83,0.00,EL00,Sueldos y Salarios Cocineros
+0.00,64000101,,EUR,838.00,0.00,838.00,0.00,EL00,Paga extra
+0.00,64000102,,EUR,460.12,0.00,460.12,0.00,EL00,Paga extra Camareros
+0.00,64000103,,EUR,175.02,0.00,175.02,0.00,EL00,Paga extra Cocineros
+0.00,64000301,,EUR,66253.47,65170.67,1082.80,0.00,EL00,Vacaciones
+0.00,64000302,,EUR,27356.10,25631.11,1724.99,0.00,EL00,Vacaciones Camareros
+0.00,64000303,,EUR,8069.05,8069.05,0.00,0.00,EL00,Vacaciones Cocineros
+0.00,64100001,,EUR,65170.67,0.00,65170.67,0.00,EL00,Indemnizaciones
+0.00,64100002,,EUR,25631.11,0.00,25631.11,0.00,EL00,Indemnizaciones Camareros
+0.00,64100003,,EUR,8069.05,0.00,8069.05,0.00,EL00,Indemnizaciones Cocineros
+0.00,64200001,,EUR,2440.81,90.00,2350.81,0.00,EL00,Seguridad Social a cargo de la empresa
+0.00,64200002,,EUR,1722.71,0.00,1722.71,0.00,EL00,Seguridad Social a cargo de la empresa Camareros
+0.00,64200003,,EUR,439.83,0.00,439.83,0.00,EL00,Seguridad Social a cargo de la empresa Cocineros
+0.00,64209999,,EUR,456.77,0.00,456.77,0.00,EL00,Seguridad Social a cargo de la empresa - Atrasos
+0.00,64900001,,EUR,117.18,117.18,0.00,0.00,EL00,Otros gastos sociales - Uniformes
+0.00,64900002,,EUR,371.79,0.00,371.79,0.00,EL00,Otros gastos sociales - Seguro Acc. Colectivo
+0.00,64900999,,EUR,1003.20,1065.39,-62.19,0.00,EL00,Otros gastos sociales - Otros
+0.00,65000000,,EUR,5311.44,5097.50,213.94,0.00,EL00,Pérdidas de créditos comerciales incobrables
+0.00,66200000,,EUR,149343.72,74671.86,74671.86,0.00,EL00,Intereses deudas
+0.00,66200002,,EUR,2808.47,0.00,2808.47,0.00,EL00,Intereses deuda con Empresas  Grupo (Cash Pooling)
+0.00,66230000,,EUR,74671.86,74671.86,0.00,0.00,EL00,Intereses deuda con Empresas del Grupo
+0.00,66900000,,EUR,1.18,0.00,1.18,0.00,EL00,Otros gastos financieros
+0.00,67800000,,EUR,21.68,6.96,14.72,0.00,EL00,Gastos excepcionales - Deducibles
+0.00,67800001,,EUR,532.89,0.00,532.89,0.00,EL00,Gastos excepcionales - No Deducibles
+0.00,67800002,,EUR,3.04,2.83,0.21,0.00,EL00,Gastos excepcionales _ redondeos
+0.00,68130000,,EUR,260.41,0.00,260.41,0.00,EL00,Dotación Amortización Maquinaria
+0.00,68160000,,EUR,18465.33,0.00,18465.33,0.00,EL00,Dotación Amortización Mobiliario
+0.00,70200010,,EUR,408.96,1650.96,-1242.00,0.00,EL00,Breakfast
+0.00,70200020,,EUR,39.09,170.89,-131.80,0.00,EL00,MINIBAR
+0.00,70200030,,EUR,27.27,27.27,0.00,0.00,EL00,BAR / CAFETERIA
+0.00,70300030,,EUR,0.00,126.36,-126.36,0.00,EL00,OVERBOOKING
+0.00,70300080,,EUR,152.72,248.17,-95.45,0.00,EL00,PARKING
+0.00,70300110,,EUR,0.00,71.82,-71.82,0.00,EL00,OTROS SERVICIOS PRODUCIDOS / VARIOS
+0.00,70510070,,EUR,113.64,0.00,113.64,0.00,EL00,CCI
+0.00,70510100,,EUR,639.00,0.00,639.00,0.00,EL00,GRUPO TURISTICO SERIES
+0.00,70510110,,EUR,20875.84,40215.46,-19339.62,0.00,EL00,INDIVIDUAL EMPRESA
+0.00,70510120,,EUR,35281.81,96272.56,-60990.75,0.00,EL00,INDIVIDUAL TURISTICO
+0.00,70610000,,EUR,3563.88,620.08,2943.80,0.00,EL00,Dto s/ventas HABITACIONES pronto pago prod
+0.00,70610110,,EUR,323.22,264.78,58.44,0.00,EL00,DESCUENTOS INDIVIDUAL EMPRESA
+0.00,70610120,,EUR,821.08,585.86,235.22,0.00,EL00,DESCUENTOS INDIVIDUAL TURISTICO
+0.00,70620010,,EUR,81.62,6.60,75.02,0.00,EL00,DESCUENTOS DESAYUNOS
+0.00,70900000,,EUR,70224.73,69685.99,538.74,0.00,EL00,Rappels s/ventas
+0.00,75900000,,EUR,119947.48,134184.35,-14236.87,0.00,EL00,Ingresos por servicios diversos
+0.00,75900007,,EUR,591.25,1332.11,-740.86,0.00,EL00,Ingresos por servicios diversos - Suministros
+0.00,76200001,,EUR,0.00,85674.17,-85674.17,0.00,EL00,Ingresos Créditos con Empresas  Grupo (Préstamo)
+0.00,76200002,,EUR,0.00,795.52,-795.52,0.00,EL00,Ingresos Créditos con Empresas  Grupo (Cash Pooli)
+0.00,76900000,,EUR,0.00,2.94,-2.94,0.00,EL00,Otros ingresos financieros
+0.00,77800000,,EUR,0.00,42.19,-42.19,0.00,EL00,INGRESOS EXTRAORDINARIOS
+0.00,79400000,,EUR,0.00,18595.00,-18595.00,0.00,EL00,Reversion Pérdidas x deterioro créditos  op.com.NG
