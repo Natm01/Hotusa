@@ -129,8 +129,8 @@ class GeneradorTotalidad:
         df_diario['GT_DEBE'] = pd.to_numeric(df_diario.get(col_debe, 0), errors='coerce').fillna(0)
         df_diario['GT_HABER'] = pd.to_numeric(df_diario.get(col_haber, 0), errors='coerce').fillna(0)
         df_diario['GT_IMPORTE_MONEDA_LOCAL'] = df_diario['GT_DEBE'] - df_diario['GT_HABER']
-        df_diario['GT_CUENTA'] = df_diario.get(col_cuenta, 'Sin_Cuenta')
-        df_diario['GT_ASIENTO'] = df_diario.get(col_asiento, 'Sin_Asiento')
+        df_diario['GT_CUENTA'] = df_diario.get(col_cuenta, 'Sin_Cuenta').astype(str)
+        df_diario['GT_ASIENTO'] = df_diario.get(col_asiento, 'Sin_Asiento').astype(str)
 
         return df_diario
 
@@ -182,7 +182,7 @@ class GeneradorTotalidad:
                 col_saldo_periodo = col
 
         # Crear columnas GT_
-        df_sumas['GT_CUENTA'] = df_sumas.get(col_cuenta, 'Sin_Cuenta')
+        df_sumas['GT_CUENTA'] = df_sumas.get(col_cuenta, 'Sin_Cuenta').astype(str)
         df_sumas['GT_ARRASTRE_SALDOS'] = pd.to_numeric(df_sumas.get(col_arrastre, 0), errors='coerce').fillna(0)
         df_sumas['GT_PERIODOS_ANTERIORES'] = pd.to_numeric(df_sumas.get(col_periodos_ant, 0), errors='coerce').fillna(0)
         df_sumas['GT_SALDO_DEBE_SyS'] = pd.to_numeric(df_sumas.get(col_debe_sys, 0), errors='coerce').fillna(0)
