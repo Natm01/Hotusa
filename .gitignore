@@ -1,0 +1,150 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+*.whl
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Pyright type checker
+pyrightconfig.json
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Environments
+.env
+.env.*
+.venv
+.venv/
+
+# Local settings
+settings_local.py
+
+# SQLite database
+*.sqlite3
+
+# Other IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary d
+*.bak
+*.tmp
+*.swp
+*.~ 
+
+# Archivos de contenedor Docker
+# Dockerfile se necesita para el build del contenedor en el pipeline
+docker-compose.yml
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build de React
+build/
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build de React
+build/
+
+# Librorías Hotusa (excluir si es necesario)
+Acteon Siglo XXI/
+Bemus Hotels/
+Braide/
+C.B Coruña/
+Carina Hotels/
+Casa de Lincora/
+Citadel/
+Cleon Hotel/
+Cygnus/
+Diana/
+Erise Hotels/
+Estrela de Santiago/
+Eurostars Hotel Company/
+Explotadora Madrid Tower/
+Gaudium Hotels/
+Hoteles Turísticos Unidos/
+Hotusa Gestión Hotelera/
+Lucentum/
+Punto properties/
+Rigel/
+Vicelo/
