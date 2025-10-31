@@ -272,7 +272,7 @@ class ProcesadorDatos:
         return todos_registros
 
     def guardar_csv(self, registros: List[Dict[str, Any]], ruta_salida: Path):
-        """Guarda registros en un archivo CSV."""
+        """Guarda registros en un archivo CSV, removiendo prefijos cab_ y det_."""
         if not registros:
             print(f"⚠️  No hay registros para guardar en {ruta_salida}")
             return
@@ -280,9 +280,24 @@ class ProcesadorDatos:
         # Crear directorio si no existe
         ruta_salida.parent.mkdir(parents=True, exist_ok=True)
 
+        # Renombrar columnas removiendo prefijos cab_ y det_
+        registros_renombrados = []
+        for registro in registros:
+            registro_nuevo = {}
+            for clave, valor in registro.items():
+                # Remover prefijo cab_ o det_
+                if clave.startswith('cab_'):
+                    nueva_clave = clave[4:]  # Quitar 'cab_'
+                elif clave.startswith('det_'):
+                    nueva_clave = clave[4:]  # Quitar 'det_'
+                else:
+                    nueva_clave = clave
+                registro_nuevo[nueva_clave] = valor
+            registros_renombrados.append(registro_nuevo)
+
         # Obtener todas las columnas
         columnas = set()
-        for registro in registros:
+        for registro in registros_renombrados:
             columnas.update(registro.keys())
 
         columnas = sorted(columnas)
@@ -291,7 +306,7 @@ class ProcesadorDatos:
         with open(ruta_salida, 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=columnas)
             writer.writeheader()
-            writer.writerows(registros)
+            writer.writerows(registros_renombrados)
 
         print(f"✅ CSV guardado: {ruta_salida} ({len(registros)} registros)")
 
@@ -423,10 +438,10 @@ class ProcesadorDatos:
 
                 for col in df.columns:
                     col_lower = col.lower()
-                    # Buscar columnas det_Debe o det_Haber
-                    if 'det_debe' in col_lower and col_debe is None:
+                    # Buscar columnas Debe o Haber (sin prefijos det_)
+                    if 'debe' in col_lower and 'moneda local' in col_lower and col_debe is None:
                         col_debe = col
-                    elif 'det_haber' in col_lower and col_haber is None:
+                    elif 'haber' in col_lower and 'moneda local' in col_lower and col_haber is None:
                         col_haber = col
 
                 # Sumar los valores de debe y haber
