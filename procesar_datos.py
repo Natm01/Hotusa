@@ -414,9 +414,11 @@ class ProcesadorDatos:
 
                 for col in df.columns:
                     col_lower = col.lower()
-                    if 'debe' in col_lower and 'saldo' in col_lower:
+                    # Buscar columna de debe - puede ser "Período de informe debe", "Saldo Debe", etc.
+                    if 'debe' in col_lower and col_debe is None:
                         col_debe = col
-                    elif 'haber' in col_lower and 'saldo' in col_lower:
+                    # Buscar columna de haber
+                    elif 'haber' in col_lower and col_haber is None:
                         col_haber = col
 
                 # Si encontramos las columnas, sumar los valores
