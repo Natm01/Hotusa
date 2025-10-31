@@ -183,13 +183,13 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         ruta = sys.argv[1]
     else:
-        ruta = './datos_originales'
+        ruta = './datos_braide'
 
     # Archivo de salida (se puede personalizar como segundo argumento)
     if len(sys.argv) > 2:
         salida = sys.argv[2]
     else:
-        salida = 'estructura_datos.txt'
+        salida = 'estructura_datos_braide.txt'
 
     try:
         explorar_directorio(ruta, salida)
