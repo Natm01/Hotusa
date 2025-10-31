@@ -457,8 +457,8 @@ class ProcesadorDatos:
         df = df.sort_values('Sociedad')
 
         # Formatear números
-        df['Importe Final Debe'] = df['Importe Final Debe'].apply(lambda x: f"{x:,.2f}")
-        df['Importe Final Haber'] = df['Importe Final Haber'].apply(lambda x: f"{x:,.2f}")
+        df['Debe'] = df['Debe'].apply(lambda x: f"{x:,.2f}")
+        df['Haber'] = df['Haber'].apply(lambda x: f"{x:,.2f}")
 
         # Guardar en Excel
         ruta_reporte = self.ruta_datos_tratados / 'reporte_importes_finales.xlsx'
@@ -470,8 +470,8 @@ class ProcesadorDatos:
             # Ajustar ancho de columnas
             worksheet = writer.sheets['Importes Finales']
             worksheet.column_dimensions['A'].width = 35
-            worksheet.column_dimensions['B'].width = 25
-            worksheet.column_dimensions['C'].width = 25
+            worksheet.column_dimensions['B'].width = 20
+            worksheet.column_dimensions['C'].width = 20
 
         print(f"\n✅ Reporte Excel generado: {ruta_reporte}")
         return ruta_reporte
@@ -500,8 +500,8 @@ class ProcesadorDatos:
                 totales = self.calcular_totales_sociedad(nombre_sociedad, nombre_normalizado)
                 datos_reporte.append({
                     'Sociedad': nombre_sociedad,
-                    'Importe Final Debe': totales['debe'],
-                    'Importe Final Haber': totales['haber']
+                    'Debe': totales['debe'],
+                    'Haber': totales['haber']
                 })
 
             except Exception as e:
@@ -510,8 +510,8 @@ class ProcesadorDatos:
                 # Agregar al reporte con valores en 0
                 datos_reporte.append({
                     'Sociedad': nombre_sociedad,
-                    'Importe Final Debe': 0.0,
-                    'Importe Final Haber': 0.0
+                    'Debe': 0.0,
+                    'Haber': 0.0
                 })
 
         print("\n" + "="*70)
