@@ -1,56 +1,144 @@
-# Inventario de Datos Contables - Hotusa
+# Scripts de Análisis y Organización de Datos Contables - Hotusa
 
 ## Descripción
 
-Script de Python para realizar un inventario completo de los datos contables almacenados en la carpeta `datos_originales`. El script analiza cada sociedad y genera un reporte detallado con información sobre los archivos de Libro Diario (LD) y Sumas y Saldos (SYS).
+Conjunto de scripts de Python para analizar, mapear y organizar los datos contables almacenados en la carpeta `datos_originales`. Los scripts identifican sociedades, libros diario y sumas y saldos, y generan un plan de reorganización hacia `datos_tratados`.
 
-## Estructura de Datos
+## Scripts Disponibles
 
-```
-datos_originales/
-├── Sociedad 1/
-│   ├── LD FECHA.XLS  (Libro Diario)
-│   └── SYS FECHA.XLS (Sumas y Saldos)
-├── Sociedad 2/
-│   ├── LD FECHA.XLS
-│   └── SYS FECHA.XLS
-└── ...
+### 1. explorar_estructura.py - Exploración de Estructura
+
+Explora recursivamente la carpeta `datos_originales` y genera un archivo de texto con toda la estructura de directorios y archivos.
+
+#### Uso:
+```bash
+python3 explorar_estructura.py
 ```
 
-## Uso
+#### Genera:
+- `estructura_datos.txt` - Árbol completo con tamaños y fechas de modificación
 
-### Ejecución básica
+#### Propósito:
+Visualizar la estructura actual antes de comenzar la reorganización.
 
+---
+
+### 2. mapear_archivos_csv.py - Mapeo de Archivos
+
+Analiza todos los archivos en `datos_originales` e identifica automáticamente:
+- Sociedades
+- Libros Diario vs Sumas y Saldos
+- Estructura por años (ej: Bemus Hotels con carpetas 2017-2024)
+- Archivos múltiples (trimestres, códigos, partes)
+
+Genera un plan completo de reorganización hacia `datos_tratados`.
+
+#### Uso:
+```bash
+python3 mapear_archivos_csv.py
+```
+
+#### Genera:
+- `mapeo_archivos.csv` - Tabla con todos los archivos y destinos propuestos
+- `mapeo_archivos.json` - Formato JSON para procesamiento automatizado
+- `mapeo_archivos.txt` - Reporte legible con toda la información
+
+#### Estructura de Salida Propuesta:
+```
+datos_tratados/
+├── libro_diario/
+│   ├── Acteon_Siglo_XXI_libro_diario.csv
+│   ├── Argon_Hotel_libro_diario.csv
+│   ├── 2017_Bemus_Hotels_libro_diario.csv
+│   ├── 2018_Bemus_Hotels_libro_diario.csv
+│   ├── Braide_libro_diario_parte1.csv
+│   ├── Braide_libro_diario_parte2.csv
+│   └── ...
+└── sumas_saldos/
+    ├── Acteon_Siglo_XXI_sumas_saldos.csv
+    ├── Argon_Hotel_sumas_saldos.csv
+    ├── 2017_Bemus_Hotels_sumas_saldos.csv
+    └── ...
+```
+
+#### Características de Identificación:
+- **Libro Diario**: Detecta "LD", "Diario", "LIBRO DIARIO"
+- **Sumas y Saldos**: Detecta "SYS", "SyS", "Balance", "Sumas y saldos"
+- **Años**: Detecta subcarpetas con formato 2017, 2018, etc.
+- **Múltiples**: Identifica trimestres, códigos (LD_4200), partes (AA00, AA01)
+
+---
+
+### 3. inventario_datos.py - Inventario Rápido
+
+Script original para generar un reporte rápido del estado actual de los datos.
+
+#### Uso:
 ```bash
 python3 inventario_datos.py
 ```
 
-### Especificar una ruta personalizada
+---
 
-```bash
-python3 inventario_datos.py /ruta/a/datos_originales
+## Estructura de Datos Original
+
+### Sociedades con archivos directos:
+```
+datos_originales/
+└── Argon Hotel/
+    ├── LD 30.09.2025.XLS
+    └── SYS 30.09.2025.XLS
 ```
 
-## Información que Proporciona
+### Sociedades con estructura por años:
+```
+datos_originales/
+└── Bemus Hotels/
+    ├── 2017/
+    │   ├── Diario a 31.12.2017.XLS
+    │   └── Balance de sumas y saldos 31.12.2017.XLS
+    ├── 2018/
+    │   ├── Diario a 31.12.2018.XLS
+    │   └── Balance de sumas y saldos 31.12.2018.XLS
+    └── ...
+```
 
-El script genera un reporte que incluye:
+### Sociedades con archivos múltiples:
+```
+datos_originales/
+└── Braide/
+    ├── BRAIDE - Diario 01.01.2025 a 31.03.2025.XLS
+    ├── BRAIDE - Diario 01.04.2025 a 30.06.2025.XLS
+    ├── BRAIDE - Diario 01.07.2025 a 30.09.2025.XLS
+    └── BRAIDE - 1000.25 Sumas y saldos 30.09.2025.XLS
+```
 
-### Por cada sociedad:
-- Nombre de la sociedad
-- Lista de archivos encontrados
-- Tipo de cada archivo (Libro Diario, Sumas y Saldos, u Otro)
-- Tamaño de cada archivo
-- Fecha de modificación
-- Estado de completitud (si tiene ambos archivos requeridos)
-- Tamaño total de la sociedad
+## Flujo de Trabajo Recomendado
 
-### Resumen estadístico:
-- Número total de sociedades
-- Sociedades completas e incompletas
-- Total de archivos analizados
-- Desglose por tipo de archivo
-- Tamaño total de todos los datos
-- Listado de sociedades incompletas (si las hay)
+1. **Explorar la estructura actual**:
+   ```bash
+   python3 explorar_estructura.py
+   ```
+   Revisa `estructura_datos.txt` para familiarizarte con los datos.
+
+2. **Generar el mapeo de reorganización**:
+   ```bash
+   python3 mapear_archivos_csv.py
+   ```
+   Revisa los archivos generados:
+   - `mapeo_archivos.txt` - Para lectura rápida
+   - `mapeo_archivos.csv` - Para análisis en Excel
+   - `mapeo_archivos.json` - Para procesamiento automatizado
+
+3. **Verificar el mapeo**:
+   - Revisa que todos los archivos estén correctamente identificados
+   - Verifica que los nombres destino sean correctos
+   - Confirma que las sociedades con años estén agrupadas apropiadamente
+
+4. **Ejecutar la reorganización** (próximo script):
+   - El siguiente paso será crear un script que lea el mapeo
+   - Convierta los archivos XLS/XLSX a CSV
+   - Los reorganice en la carpeta `datos_tratados`
 
 ## Requisitos
 
@@ -59,62 +147,34 @@ El script genera un reporte que incluye:
 
 ## Características
 
+- Identificación automática de tipos de archivo con sistema de confianza
+- Manejo de estructuras complejas (años, trimestres, códigos)
 - Formateo automático de tamaños de archivo (B, KB, MB, GB)
-- Identificación automática de tipos de archivo
-- Detección de sociedades incompletas
-- Manejo de errores robusto
-- Salida clara y profesional
+- Normalización de nombres de archivo
+- Detección de archivos múltiples
 - Código completamente comentado
+- Manejo robusto de errores
+- Salida clara y profesional
 
-## Ejemplo de Salida
+## Casos Especiales Soportados
 
-```
-================================================================================
-                     INVENTARIO DE DATOS CONTABLES - HOTUSA
-================================================================================
+- **Bemus Hotels**: Subcarpetas por años (2017-2024)
+- **Braide, Cygnus, Explotadora Madrid Tower**: Archivos divididos por trimestres
+- **Hoteles Turísticos Unidos**: Archivos con códigos (LD_4200, LD_4201, etc.)
+- **Estrela de Santiago**: Archivos divididos en partes (AA00, AA01)
+- **Extensiones mixtas**: .XLS, .xlsx, .xlsm
 
-Fecha y hora del análisis: 31/10/2025 07:23:11
-Carpeta analizada: /home/user/Hotusa/datos_originales
+## Notas Importantes
 
---------------------------------------------------------------------------------
+- Los nombres de archivo destino siguen el formato:
+  - Sin año: `Sociedad_tipo.csv`
+  - Con año: `Año_Sociedad_tipo.csv`
+  - Múltiples: `Sociedad_tipo_parte1.csv`
 
-1. SOCIEDAD: Argon Hotel
-   ──────────────────────────────────────────────────────────────────────
-   Archivos encontrados: 2
-      📈 SYS 30.09.2025.XLS
-         Tipo: Sumas y Saldos
-         Tamaño: 87.39 KB
-         Fecha: 31/10/2025 07:21
-
-      📊 LD 30.09.2025.XLS
-         Tipo: Libro Diario
-         Tamaño: 7.87 MB
-         Fecha: 31/10/2025 07:21
-
-   Estado: ✓ COMPLETA
-   Tamaño total: 7.96 MB
-
---------------------------------------------------------------------------------
-
-================================================================================
-                              RESUMEN ESTADÍSTICO
-================================================================================
-
-Total de sociedades:          1
-  - Completas (LD + SYS):     1
-  - Incompletas:              0
-
-Total de archivos:            2
-  - Libros Diario (LD):       1
-  - Sumas y Saldos (SYS):     1
-
-Tamaño total de datos:        7.96 MB
-
-================================================================================
-                                FIN DEL REPORTE
-================================================================================
-```
+- Todos los espacios se convierten en guiones bajos
+- Los caracteres especiales se eliminan
+- Los archivos se reorganizan en dos carpetas: `libro_diario` y `sumas_saldos`
 
 ## Autor
 
-Script desarrollado para análisis de datos contables de Hotusa
+Scripts desarrollados para análisis y organización de datos contables de Hotusa
