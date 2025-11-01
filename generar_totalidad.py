@@ -120,9 +120,9 @@ class GeneradorTotalidad:
                 col_debe = col
             elif 'haber' in col_lower and 'moneda local' in col_lower and col_haber is None:
                 col_haber = col
-            elif col_lower == 'cuenta' and col_cuenta is None:
+            elif col_lower == 'gt_cuenta' and col_cuenta is None:
                 col_cuenta = col
-            elif col_lower in ['número', 'numero', 'asiento'] and col_asiento is None:
+            elif col_lower == 'nº doc.' and col_asiento is None:
                 col_asiento = col
 
         # Crear columnas GT_
